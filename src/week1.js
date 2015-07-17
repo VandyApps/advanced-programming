@@ -1,11 +1,11 @@
-/** Week 1 - Introduction to functional programming in JavaScript
-
-- Using a REPL.
-
-- Welcome to JavaScript.
-
-- Anonymous functions: Lambdas, closures, lambda lifting.
-
+/** 
+ * Week 1 - Introduction to functional programming in JavaScript
+ * 
+ * - Using a REPL.
+ * 
+ * - Welcome to JavaScript.
+ * 
+ * - Anonymous functions: Lambdas, closures, lambda lifting.
 */
 
 // Normal function
