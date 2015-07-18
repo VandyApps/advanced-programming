@@ -1,3 +1,13 @@
+## Advanced Programming Sessions @ VandyApps
+
+Are you a Vanderbilt computer science student looking to become a better
+programmer? Join us on an 11 week journey towards that goal. We will be
+exploring functional programming, monads, promises, typeclasses, and more in
+JavaScript and Haskell, and becoming better, smarter programmers in the
+process.
+
+Coming Fall 2015.
+
 #### Week 1 - Introduction to functional programming in JavaScript
 
 - Using a REPL.
@@ -16,8 +26,6 @@
 
 - Monad laws: Left Identity, Right Identity, Associativity
 
-- Bind, Return, (Optionally) fail
-
 - Maybe monad
 
 #### Week 4 - Async monad / Promises A+
@@ -26,7 +34,7 @@
 
 - Promises | A+
 
-#### Week 5 - Either monad
+#### Week 5 - Either Monad
 
 - Left (error) | Right (result)
 
