@@ -30,6 +30,8 @@ Coming Fall 2015.
 
 #### Week 4 - Async monad / Promises A+
 
+- Callback hell
+
 - Async monad
 
 - Promises | A+
