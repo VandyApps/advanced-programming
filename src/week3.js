@@ -262,7 +262,7 @@ Maybe = function(value) {
     }
   };
 
-  var Something = function(value) { 
+  var Just = function(value) { 
     return {
       bind: function(fn) { 
         return Maybe(fn.call(this, value));
@@ -282,7 +282,7 @@ Maybe = function(value) {
   if (typeof value === 'undefined' || value === null)
     return Nothing;
 
-  return Something(value);
+  return Just(value);
 };
 
 // Phew, that's a lot. Let's take a look at the new functions:
