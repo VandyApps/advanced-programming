@@ -54,7 +54,7 @@ Coming Fall 2015.
 
 - Pattern matching.
 
-#### Week 6 - Introduction to Programming in Haskell 2
+#### Week 7 - Introduction to Programming in Haskell 2
 
 - If statements
 
@@ -62,7 +62,7 @@ Coming Fall 2015.
 
 - Guards
 
-#### Week 7 - Creating Data Types in Haskell
+#### Week 8 - Creating Data Types in Haskell
 
 - data vs. newtype vs. type
 
@@ -74,25 +74,25 @@ Coming Fall 2015.
 
 - Binary tree example.
 
-#### Week 8 - Typeclasses 101
+#### Week 9 - Typeclasses 101
 
 - Build on binary tree example and use typeclass for its operations.
 
 - Typeclasses are similar to interfaces in OOP.
 
-#### Week 9 - Map / Fold / Filter / Zip in Haskell
+#### Week 10 - Map / Fold / Filter / Zip in Haskell
 
 - Use them, love them.
 
 - Take a look at their function signatures.
 
-#### Week 10 - Monads in Haskell
+#### Week 11 - Monads in Haskell
 
 - Maybe, Either monads.
 
 - `do` notation.
 
-#### Week 11 - IO in Haskell
+#### Week 12 - IO in Haskell
 
 - Isn’t it crazy that we’re doing IO last?
 
