@@ -1,0 +1,11 @@
+-- Week 8 - Creating Data Types in Haskell
+-- 
+-- - data vs. newtype vs. type
+-- 
+-- - Type classes.
+-- 
+-- - Abstract function signatures.
+-- 
+-- - Recursive types
+-- 
+-- - Binary tree example.
