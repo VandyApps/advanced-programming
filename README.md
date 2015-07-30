@@ -64,17 +64,19 @@ Coming Fall 2015.
 
 #### Week 8 - Creating Data Types in Haskell
 
-- data vs. newtype vs. type
-
-- Type classes.
-
-- Abstract function signatures.
+- data
 
 - Recursive types
 
 - Binary tree example.
 
+- type
+
 #### Week 9 - Typeclasses 101
+
+- Type classes.
+
+- Abstract function signatures.
 
 - Build on binary tree example and use typeclass for its operations.
 
