@@ -76,11 +76,11 @@ Coming Fall 2015.
 
 - Type classes.
 
-- Abstract function signatures.
+- Typeclasses are similar to interfaces in OOP.
 
 - Build on binary tree example and use typeclass for its operations.
 
-- Typeclasses are similar to interfaces in OOP.
+- BEncoding example.
 
 #### Week 10 - Map / Fold / Filter / Zip in Haskell
 
