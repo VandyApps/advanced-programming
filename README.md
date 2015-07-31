@@ -82,19 +82,29 @@ Coming Fall 2015.
 
 - BEncoding example.
 
-#### Week 10 - Map / Fold / Filter / Zip in Haskell
+#### Week 10 - $ and . operators | More Monads
 
-- Use them, love them.
+- $ and . operators
 
-- Take a look at their function signatures.
+- Maybe, Either monads
 
-#### Week 11 - Monads in Haskell
+- Identity monad
 
-- Maybe, Either monads.
+- Reader monads
 
-- `do` notation.
+- `do` notation
 
-#### Week 12 - IO in Haskell
+#### Week 11 - do and IO in Haskell
 
-- Isn’t it crazy that we’re doing IO last?
+- Writer monads
+
+- IO Monad
+
+- `do` notation with IO monad
+
+#### Week 12 - Monad Transformers
+
+- Stacking non-IO monads
+
+- Stacking monads on top of IO
 
