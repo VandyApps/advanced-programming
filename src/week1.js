@@ -19,12 +19,12 @@
 // even created a _new_ project just to test out that function in a clean
 // environment that would compile cleanly.
 //
-// Well, fear no more. Modern™ languages have a solution for this problem, and
-// it's called the REPL. REPL is an acronymn: It stands for "Read, Evaluate,
+// Well, fear no more. Progressive™ languages have a solution for this problem, and
+// it's called the REPL. REPL is an acronym: It stands for "Read, Evaluate,
 // Print, Loop," and that's exactly what it does. It allows you to write code,
 // import libraries, and more without compiling and running a full project.
 //
-// If you've used the Python prompt in your command line before, you've
+// If you've used the Python prompt in your terminal before, you've
 // already used a REPL. Similarly if you have opened up the Chrome or Firefox
 // developer tools.
 //
@@ -42,13 +42,14 @@
 //    functional. JavaScript is an oddball. It is prototypal, which means that
 //    new objects are created by cloning them from other objects. However,
 //    JavaScript is multi-paradigm, in that it can also be used in a functional
-//    or object oriented manner. We will focus on it's functional features.
+//    or object oriented manner. We will focus on it's functional features in
+//    these seminars.
 //
 // 2. Weakly typed – Unlike Python and Ruby, JavaScript is weakly typed.
 //    Strongly typed languages will either not compile or throw errors when
 //    an incorrect type is passed to a function. JavaScript, on the other hand,
 //    is weakly typed, so type conversions happen implicitly. Sometimes this
-//    can be a Very Bad™ thing.
+//    can cause unexpected behavior.
 //
 // 3. Dynamically typed – Unlike C++ and Java, when writing JavaScript you do
 //    not need to declare types in your code. The "var" keyword declares
@@ -58,7 +59,7 @@
 
 /* ANONYMOUS FUNCTIONS */
 
-// Normal function is JavaScript look like this:
+// Functions in JavaScript look like this:
 
 function doSomething(param1, param2) {
     // ...
@@ -86,10 +87,10 @@ function doSomething(param1, param2) {
 
 // In the `doSomething` function, we assign an anonymous function (so-called
 // because it doesn't have a name when we define it) to the `myFunc` variable.
-// We can then call that function by invoking the `myFunc` variable.
+// We can then call that function by invoking `myFunc` .
 //
-// Anonymous functions give us the reusability of normal functions, but with
-// limited scope.
+// Anonymous functions give us the reusable property of normal functions, but
+// with limited scope.
 
 function doSomething(param1, param2) {
     // Our anonymous functions can take parameters.
@@ -98,8 +99,8 @@ function doSomething(param1, param2) {
     };
 
     paramLambda(1, 2); // => 3
-    paramLambda(2, 3);
-    paramLabmda(3, 4);
+    paramLambda(2, 3); // => 5
+    paramLabmda(3, 4); // => 7
 }
 
 // In fact, lambdas can sometimes give us even more power than normal
@@ -176,8 +177,8 @@ function userLogout(user) {
 // every environment variable that is captured (or encapsulate all of them
 // into an object and pass that object) in the new top-level definition.
 //
-// We'll lift the `loginStateChange` closure into its own function that we can
-// reuse in both the `userLogin` and `userLogout` functions.
+// We'll lift the `loginStateChange` closure into a top-level definition that
+// we can reuse in both the `userLogin` and `userLogout` functions.
 
 // Lifted lambda.
 function loginStateChange(user) {
@@ -203,6 +204,5 @@ function userLogout(user) {
 // common, the lambda is lifted out of its environment and into the global
 // scope.
 //
-// In short, lambdas, closures, and lambda lifting is all about the most
-// efficient code reuse possible.
-
+// In short, lambdas, closures, and lambda lifting are all about optimizing code
+// reuse.
