@@ -1,5 +1,5 @@
 /**
- * Week 3 - Introduction to Monads
+ * Week 3 - Introduction to Monads in JavaScript
  *
  * - Maybe monad
  *
@@ -66,10 +66,11 @@ var coords = getCoordinates(response); // => [1234, 2345]
 // We're done! Oh wait, we still haven't tested the failed lookup response.
 // Let's try that.
 
-var coords = getCoordinates(badResponse); // => ERROR
+var coords = getCoordinates(badResponse); // => Uncaught TypeError: Cannot read property 'latitude' of null
 
-// Looks like that won't work. In some languages, this will cause a null pointer
-// exception (do you see why?).
+// Looks like that won't work. JavaScript gave us a TypeError, while in Java
+// this would cause a null pointer exception. Do you see why the error is
+// occurring?
 
 // Okay, so it looks like we'll need to do some checks in our code to make sure
 // that values aren't null.
@@ -95,7 +96,7 @@ function getCoordinates(response) {
 // Phew, that was a lot of null checks. Unfortunately, they are necessary if we
 // are to be 100% sure that an exception won't be thrown.
 //
-// Except... <hint> maybe </hint> we can be smarter about how we perform those
+// Except... `<hint>` maybe `</hint>` we can be smarter about how we perform those
 // checks.
 
 /* INTRODUCING THE MAYBE MONAD */

@@ -14,15 +14,19 @@
 
 /* CALLBACK HELL */
 
-// I just started a new job as a front-end developer. My first task is to
-// create a web client for our photo export service. The user can provide their
-// credentials to the application and press export.
+// Imagine that I just started a new job as a front-end developer. My first
+// task is to create a web client for our photo export service. The user can
+// provide their credentials to the application and press export.
 //
 // From my perspective, things are a lot more complicated. First, I have to
 // trade the user credentials for an API Token (API call 1), then I have to use
 // that API Token to retrieve a list of the users photos (API call 2). Then
 // I need to pass that list to another API call that takes a list of photos and
 // returns an AWS S3 link to download the zip (API call 3).
+//
+// None of these calls can be made synchronously. Why? Because making API calls
+// takes time. Therefore, we must use asynchronous functions that "call us
+// back" when their operation finishes.
 //
 // Here are the endpoints:
 //
@@ -32,7 +36,9 @@
 //
 // GET /photos/export?apiToken=apiTokenphoto=photoId1&photo=photoId2&photo=photoId3 => response={'link': https://...}
 
-// Here's my first stab at solving the problem:
+// Here's my first stab at solving the problem. The code looks scary – don't
+// worry, the rest of the tutorial works towards simplifying this code, so
+// don't worry if you don't understand it right now.
 
 $(window).load(function(){
     $('#submit').click(function() {
@@ -66,9 +72,9 @@ $(window).load(function(){
 // Welcome to callback hell.
 //
 // This code is virtually unreadable. Because we are dealing with asynchronous
-// code, these callbacks are necessary to get our job done. For instance, we
-// can't perform the request for photo Ids until we receive the response that
-// contains our API token.
+// operations, these callbacks are necessary to get our job done. For instance,
+// we can't perform the request for photo Ids until we receive the response
+// that contains our API token.
 //
 // How can we can refactor this code to be more manageable?
 
@@ -256,10 +262,11 @@ function exportFiles(apiToken, photoIds) {
     });
 }
 
-// Our new main function is clearly flatter, and we were able to pull our error
+// Our new main function is "flatter", and we were able to pull our error
 // handling into a single `failure` function. This is helpful when you want to
 // update a status box in your UI with different messages for different failure
-// reasons, but in the same way every time (same pop up or animation, etc).
+// reasons, but in the same way every time (same pop up or animation, etc). If
+// we wanted different failure functions for each call, we could do that as well.
 //
 // The `then` function behaves similarly to our `bind` function. The function
 // that we pass to `then` takes the unwrapped result of the first promise (a),

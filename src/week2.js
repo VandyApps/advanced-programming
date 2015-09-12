@@ -4,6 +4,14 @@
  * - Map | Reduce/Fold | Filter | Zip
  */
 
+// This week, we'll be covering some of the seminal functions in functional
+// programming: Map, reduce, filter, and zip. Use of these functions will
+// largely replace our need for loops when writing functional code.
+//
+// As a running example throughout this session, we will consider a web
+// application that tracks users, their relationship statuses, and their
+// incomes.
+
 /* MAP */
 
 // I just queried my database to find users who are about to get married. How
@@ -29,13 +37,23 @@ var users = [
     }
 ]
 
-// How do we solve this problem using our current knowledge? Use a for loop!
+// How do we solve this problem using our current knowledge? Let's try
+// a for-loop:
 
 function updateUsers(users) {
     for (int i = 0; i < users.length; i++) {
         users[i].married = true;
     }
 }
+
+// There are a few problems with this code. First, it is not very readable.
+// Even though it is only a single for-loop, one would need to be a programmer
+// to understand this "jargon." Even for experienced programmers, deciphering
+// a for-loop, especially when multiple loops are nested, can be tricky.
+// Second, adding more loops would cause our code to use more indentation
+// levels. While largely a syntactic detail, it can be a nuisance to read
+// heavily indented code, and we are in the business of writing code not for
+// the computer, but for the reader.
 
 // Can we do better? Yes! The map operator allows us to simplify this
 // operation.
@@ -47,6 +65,11 @@ function updateUsers(users) {
         return user;
     });
 }
+
+// In the above code, the map operation applies the anonymous function passed
+// as its first argument to every element of the users array. The map function
+// then returns a new array with the resulting set of data; the original users
+// array is unmodified.
 
 // What if we wanted to build a new array consisting of only the newlyweds
 // names?
@@ -112,7 +135,8 @@ function filterForUnmarried(users) {
 // The function passed to filter should always return a boolean value. Each
 // object in the list will be passed to the function and the resulting boolean
 // value will determine whether or not the object should be included in the
-// resulting list.
+// resulting list. Note that, like map, filter does not modify the original
+// users array.
 
 // What if we want to lift our user married boolean function into the global
 // context (i.e. lambda lifting like we saw last week)?
@@ -249,6 +273,7 @@ function sumIncome(user1, user2) {
 
 // This function reads almost like English: "Filter for users that are married
 // and then sum their income."
+
 function sumMarriedIncome(users) {
     return users.filter(isMarried).reduce(sumIncome);
 }

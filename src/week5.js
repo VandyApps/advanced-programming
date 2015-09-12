@@ -1,5 +1,5 @@
 /**
- * Week 4 - Either Monad
+ * Week 5 - Either Monad
  *
  * - Left (error) | Right (result)
  *
@@ -16,7 +16,7 @@
 // sanitization like this:
 
 function usefulLibFunc(value) {
-    if (value !== null && value !== 0 && typeof exports !== 'undefined' && typeof value === 'number') {
+    if (value !== null && value !== 0 && typeof value !== 'undefined' && typeof value === 'number') {
         return undefined;
     }
 
@@ -76,8 +76,8 @@ function doSomething() {
     }
 }
 
-// That seems perfect. Except, what happens if an exception is thrown during
-// a map operation?
+// That seems like an adequate solution. Except, what happens if an exception
+// is thrown during a map operation?
 
 function doSomethingFunctional() {
     var userResponses = [[1, 2, 3], [1, 2], [], [4, 5], [1]];
@@ -100,19 +100,16 @@ function doSomethingFunctional() {
 // In some data sets, we may not care whether or not some of the operations
 // fail, in fact, we expect some to. But we want to make sure that the
 // operations that succeed can still be used. We can still check for errors in
-// that computation at a later point, we are just lazier about doing so.
+// that computation at a later point, we are just _lazier_ about doing so.
 
 /* EITHER MONAD */
 
-// The either monad allows us to perform these types of computations. The monad
-// gives us a slick way to bubble errors up without unwinding the entire stack
-// and losing however many computations we have already successfully completed.
+// The either monad gives us a safe way to bubble errors up without unwinding
+// the entire stack and losing however many computations we have already
+// successfully completed.
 //
-// Either is defined in Haskell as the following:
-// instance Monad (Either e) where
-//         return = Right
-//         Right m >>= k = k m
-//         Left e  >>= _ = Left e
+// Either is defined in Haskell as the following: instance Monad (Either e)
+// where return = Right Right m >>= k = k m Left e  >>= _ = Left e
 //
 // Either only ever holds one value: Left or Right. Left is traditionally used
 // for error messages, and Right (the 'Right' or correct answer) is used for
@@ -154,7 +151,8 @@ Either.prototype.Right = Either.Right;
 // The bind function (which, remember, is required for us to obey the monad
 // laws) applies a function to the value contained in Right, or does nothing to
 // an Either of type `Left`. This means that errors can be propogated without
-// doing any null checks.
+// doing any null checks. This behavior is very similar to that of maybe, which
+// we explored two weeks ago.
 
 Right.prototype.bind = function(f) {
     return f(this.value);
@@ -214,11 +212,10 @@ function doSomethingFunctional() {
 // As you can see, we were able to successfully complete all of our other
 // operations despite the fact that one of the arrays was empty. If our
 // computations are dependent on previous computations succeeding, this can
-// save us a lot of headache of having to solve the problem and then re-run all
-// of our previous computations again. If those operations involved side
-// effects, we might even have to do some work undoing those effects before our
-// re-run.
+// save us the headache of having to solve the problem and then re-run all of
+// our previous computations again. If those operations involved side effects,
+// we might even have to do some work undoing those effects before we retry.
 //
-// All in all, the Either monad can save us a lot of headache and help us write
-// JavaScript code that is far more functional and lazy than with native
-// exception handling. And sometimes, that's A Good Thing™.
+// All in all, the Either monad can save time by helping us write JavaScript
+// code that is far more functional and lazy than with native exception
+// handling.
