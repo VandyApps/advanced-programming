@@ -20,7 +20,7 @@ var users = [
 function updateUsers(users) {
     // This is read as: "For each user in a new array, let 
     // married be true."
-    users.map(function(user) {
+    return users.map(function(user) {
         user.married = true;
         return user;
     });

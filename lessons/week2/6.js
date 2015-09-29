@@ -18,7 +18,11 @@ var femaleUsers = [
 ]
 
 function filterForUnmarried(users) {
-    return users.filter(function(user) {
+    console.log(users);
+    var new_users = users.filter(function(user) {
         return user.married === false;
     });
+    console.log(users);
+    console.log(new_users);
 }
+

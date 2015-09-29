@@ -1,19 +1,19 @@
 var femaleUsers = [
     {
         'username': 'perlgirl',
-        'married': true
+        'income': 1000
     },
     {
         'username': 'susyqueue',
-        'married': false
+        'income': 2000
     },
     {
         'username': 'marytrie',
-        'married': false
+        'income': 500
     },
     {
         'username': 'annboolean',
-        'married': true
+        'income': 200000000
     }
 ]
 
@@ -21,6 +21,6 @@ function sumIncome(users) {
     // Each element of the users array is selected and 
     // collapsed into the `initialValue` of 0.
     return users.reduce(function(prev, curr, index, array) {
-        return prev.income + curr.income;
+        return prev + curr.income;
     }, 0);
 }
